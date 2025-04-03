@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Construction</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;600&display=swap');
+
+        /* Colors */
+        :root {
+            --main-color: #e61355; /* Neon Pink */
+            --second-color: #f04d7a; /* Lighter Pink */
+            --third-color: #f5a5c7; /* Light Pink */
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Lexend', sans-serif;
+            background-color: #000000; /* Black background */
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            width: 90%;
+            max-width: 720px;
+            padding: 40px 30px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+            text-align: center;
+            margin: 20px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .container::before, .container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 2px solid var(--main-color);
+            border-radius: 15px;
+            pointer-events: none;
+            animation: gamingBorderGlow 2s infinite alternate;
+        }
+
+        .container::after {
+            border: 2px dashed var(--second-color);
+            transform: scale(0.95);
+            opacity: 0.7;
+        }
+
+        @keyframes gamingBorderGlow {
+            0% {
+                box-shadow: 0 0 10px var(--main-color), 0 0 20px var(--main-color), 0 0 30px rgba(255, 0, 0, 0.8);
+            }
+            100% {
+                box-shadow: 0 0 20px var(--second-color), 0 0 40px var(--second-color), 0 0 60px rgba(255, 0, 0, 0.6);
+            }
+        }
+
+        h1 {
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            color: var(--main-color);
+            text-shadow: 0 0 8px rgba(255, 0, 0, 0.5), 0 0 12px rgba(255, 0, 0, 0.4);
+        }
+
+        .highlight {
+            color: var(--main-color);
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 1.1em;
+            opacity: 0.85;
+            margin-bottom: 40px;
+            color: var(--second-color);
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .box {
+            background: rgba(255, 0, 0, 0.2);
+            color: white;
+            padding: 8px;
+            border-radius: 15px;
+            width: 60px;
+            height: 80px;
+            text-align: center;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 0, 0, 0.6);
+            border: 2px solid rgba(255, 0, 0, 0.8);
+            animation: boxGlow 2s infinite alternate;
+        }
+
+        @keyframes boxGlow {
+            0% {
+                border-color: var(--main-color);
+                box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4), 0 0 30px var(--main-color);
+            }
+            100% {
+                border-color: rgba(0, 0, 0, 0.8);
+                box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.8);
+            }
+        }
+
+        .box span {
+            display: block;
+            font-size: 1.5em;
+            font-weight: 600;
+            text-shadow: 0 0 10px var(--main-color), 0 0 20px var(--second-color);
+            animation: textSize 1s infinite alternate;
+        }
+
+        @keyframes textSize {
+            0% {
+                font-size: 1.5em;
+                color: var(--main-color);
+            }
+            100% {
+                font-size: 1.8em;
+                color: var(--second-color);
+            }
+        }
+
+        .box small {
+            font-size: 0.8em;
+            opacity: 0.7;
+            display: block;
+            margin-top: 5px;
+            text-shadow: none;
+        }
+
+        .footer {
+            margin-top: 50px;
+            font-size: 1em;
+            color: var(--third-color);
+        }
+
+        .footer a {
+            color: var(--main-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: var(--second-color);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>We're <span class="highlight">Leveling Up</span>!</h1>
+        <p>The website is undergoing maintenance. We'll be back with more power and speed. Stay tuned!</p>
+        <div class="countdown">
+            <div class="box">
+                <span id="days">00</span>
+                <small>Days</small>
+            </div>
+            <div class="box">
+                <span id="hours">00</span>
+                <small>Hours</small>
+            </div>
+            <div class="box">
+                <span id="minutes">00</span>
+                <small>Minutes</small>
+            </div>
+            <div class="box">
+                <span id="seconds">00</span>
+                <small>Seconds</small>
+            </div>
+        </div>
+        <div class="footer">
+            Contact us at <a href="mailto:thesparksofficials@gmail.com">thesparksofficials@gmail.com</a>
+        </div>
+    </div>
+
+
+<script>
+    // Configurable Target Date
+    const targetDate = "January 1 , 2028 00:00:00"; // Change this date easily
+    const countdownDate = new Date(targetDate).getTime();
+
+    // Function to calculate and update the countdown
+    function updateCountdown() {
+        const now = new Date().getTime(); // Get current time
+        const distance = countdownDate - now; // Calculate the remaining time
+
+        if (distance >= 0) {
+            // Calculate time components
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Update the countdown elements
+            document.getElementById("days").innerText = String(days).padStart(2, '0');
+            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+        } else {
+            // If the countdown is over
+            clearInterval(timer);
+            document.querySelector(".countdown").innerHTML = "<h2>We're Live!</h2>";
+        }
+    }
+
+    // Run the function every second
+    const timer = setInterval(updateCountdown, 1000);
+
+    // Initialize the countdown immediately
+    updateCountdown();
+</script>
+    
+
+</body>
+</html>
